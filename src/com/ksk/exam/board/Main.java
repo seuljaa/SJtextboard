@@ -1,6 +1,5 @@
 package com.ksk.exam.board;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -24,9 +23,9 @@ public class Main {
       {break;}
       else if(text.equals("/usr/article/write")) {
         System.out.println("- 게시물 등록 -");
-        System.out.print("제목 :");
+        System.out.print("제목 : ");
         String title = sc.nextLine();
-        System.out.print("내용 :");
+        System.out.print("내용 : ");
         String body = sc.nextLine();
         int id = idLast + 1;
         idLast = id;
