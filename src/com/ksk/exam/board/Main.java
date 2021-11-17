@@ -1,5 +1,6 @@
 package com.ksk.exam.board;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
@@ -8,6 +9,10 @@ public class Main {
     // write your code here
     Scanner sc = new Scanner(System.in);
     int idLast = 0;
+    int idSave = 0;
+    String titleSave = null;
+    String bodySave = null;
+
     System.out.println("== 게시판 v 0.1 ==");
     System.out.println("== 프로그램 시작 ==");
     while(true)
@@ -28,6 +33,16 @@ public class Main {
         Article article = new Article(id, title, body);
         System.out.println("생성된 게시물 객체 : " + article);
         System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
+        idSave = id;
+        titleSave = title;
+        bodySave = body;
+      }
+      if(text.equals("/usr/article/detail"))
+      {
+        System.out.println("- 게시물 상세보기 -");
+        System.out.println("번호 : " + idSave);
+        System.out.println("제목 : " + titleSave);
+        System.out.println("내용 : " + bodySave);
       }
     }
 
