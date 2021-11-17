@@ -26,11 +26,7 @@ public class Main {
         System.out.print("내용 :");
         String body = sc.nextLine();
 
-        Article article = new Article();
-        article.id = id;
-        article.title = title;
-        article.body = body;
-
+        Article article = new Article(id, title, body);
         System.out.println("생성된 게시물 객체 : " + article);
         System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
         id++;
@@ -44,6 +40,12 @@ class Article {
   String title;
   String body;
 
+  Article(int id, String title, String body) // 객체의 형식 지정
+  {
+   this.id = id;
+   this.title = title;
+   this.body = body;
+  }
   public String toString()
   {
     return String.format("게시물 개수 : %d, 제목 : %s, 내용 : %s", id, title, body);
