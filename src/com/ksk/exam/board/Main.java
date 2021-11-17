@@ -43,4 +43,10 @@ class Article {
   int id;
   String title;
   String body;
+
+  public String toString()
+  {
+    return String.format("게시물 개수 : %d, 제목 : %s, 내용 : %s", id, title, body);
+  }
+
 }
