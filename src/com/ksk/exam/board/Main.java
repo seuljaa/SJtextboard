@@ -1,5 +1,6 @@
 package com.ksk.exam.board;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
@@ -7,10 +8,11 @@ public class Main {
   public static void main(String[] args) {
     // write your code here
     Scanner sc = new Scanner(System.in);
+    ArrayList <Article> list = new ArrayList<Article>();
+
     int idLast = 0;
-    int idSave = 0;
-    String titleSave = null;
-    String bodySave = null;
+    Article articleSave = null;
+
 
     System.out.println("== 게시판 v 0.1 ==");
     System.out.println("== 프로그램 시작 ==");
@@ -27,22 +29,26 @@ public class Main {
         String title = sc.nextLine();
         System.out.print("내용 : ");
         String body = sc.nextLine();
+
+
         int id = idLast + 1;
         idLast = id;
+
         Article article = new Article(id, title, body);
         System.out.println("생성된 게시물 객체 : " + article);
         System.out.printf("%d번 게시물이 등록되었습니다.\n", id);
-        idSave = id;
-        titleSave = title;
-        bodySave = body;
+        articleSave = article;
       }
       if(text.equals("/usr/article/detail"))
       {
+        Article article = articleSave;
+
         System.out.println("- 게시물 상세보기 -");
-        System.out.println("번호 : " + idSave);
-        System.out.println("제목 : " + titleSave);
-        System.out.println("내용 : " + bodySave);
+        System.out.println("번호 : " + article.id);
+        System.out.println("제목 : " + article.title);
+        System.out.println("내용 : " + article.body);
       }
+
     }
 
     System.out.println("== 프로그램 종료 ==");
